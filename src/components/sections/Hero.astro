@@ -6,7 +6,7 @@ const avatarImages = [
 ];
 ---
 
-<header class="relative flex min-h-screen items-center overflow-hidden bg-white pt-20">
+<header class="relative flex items-center overflow-hidden bg-white pt-10">
   <div class="grid-bg absolute inset-0 opacity-40"></div>
   <div class="absolute right-0 top-0 h-full w-1/2 bg-linear-to-l from-primary/5 to-transparent"></div>
   <div class="relative z-10 mx-auto w-full max-w-360 px-8 py-20 lg:px-12 lg:py-32">
@@ -16,7 +16,16 @@ const avatarImages = [
         Digital Craftsmanship Studio
       </div>
       <h1 class="text-balance mb-10 text-6xl font-extrabold leading-[0.95] text-neutral-950 lg:text-[110px]">
-        We engineer digital products that <span class="italic text-primary">perform.</span>
+        We engineer digital products that
+        <span aria-hidden="true" class="hero-word-rotator italic text-primary">
+          <span class="hero-word-track">
+            <span>scale</span>
+            <span>secure</span>
+            <span>endure</span>
+            <span>scale</span>
+          </span>
+        </span>
+        <span class="sr-only">perform</span>
       </h1>
       <div class="mt-16 flex flex-col gap-10 md:flex-row md:items-center">
         <p class="max-w-md text-xl font-normal leading-relaxed text-neutral-500">
@@ -45,3 +54,55 @@ const avatarImages = [
     </div>
   </div>
 </header>
+
+<style>
+  .hero-word-rotator {
+    display: inline-block;
+    min-width: fit-content;
+    padding-right: 0.1em;
+    height: 0.9em;
+    overflow: hidden;
+    vertical-align: baseline;
+  }
+
+  .hero-word-track {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0);
+    animation: hero-word-slide 6.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    will-change: transform;
+  }
+
+  .hero-word-track > span {
+    display: block;
+    height: 1em;
+  }
+
+  @keyframes hero-word-slide {
+    0%,
+    23.19% {
+      transform: translateY(0);
+    }
+
+    33.33%,
+    56.52% {
+      transform: translateY(-1em);
+    }
+
+    66.67%,
+    89.86% {
+      transform: translateY(-2em);
+    }
+
+    100% {
+      transform: translateY(-3em);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-word-track {
+      animation: none;
+      transform: none;
+    }
+  }
+</style>
