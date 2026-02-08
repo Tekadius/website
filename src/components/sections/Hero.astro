@@ -1,0 +1,47 @@
+---
+const avatarImages = [
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuBWWDD-iI7VsY-lC5QheS8HE9j4l6PpdKDi0JHScVT7WN5o9om6XireqKlEJey5zSOU7s2betIeG8M7abihJ-YR3j_UDiLagyaXNR70gHxLNL71pUb8UM1LOMJrEgziq73keYDGZmud-uZTT7N_tt_i-F-19ojKgqko-_TMx_285XopnOnAHegw2rVQlszYPE8rMECl-qMwTmsZVcv_GQBxVl3tpfNwNd62t4SkSBWV9pN6ntnl8oXevaKHTnWorPGF01xsSrzsOWCa",
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuCVXoVF02hbQm-_pnPVKIITLVZQ_iyVv7fpi_y_jOfGt7GulTaI1Lzc5ASGTY_R8ZIW7VA6Woxkoi7eRTwFlzFEa9k_Lx7AyGz2UYyYSLKpRtQ_gHxLSKPADj-K67VDx7bT2kXreUAvgNaP1JBC1r_XzcuE_dsMeFBHl6mSPNbvzKdoAsJp6fu7k7RuoBKxHEwXL6WJqynvoYjnYTR-Fy5ml6w8ZA0k5EEtO7ZYw0_uw07-K69UQs4Whm5W2XTi3DdGdc6OWxN3SYbo",
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuBLJd6YPLJTfaaqTWt7Dr8y-uh3ftXVXbIL5AcqepQdyrB35tRJ273gIdVf3zZTru-sGdjEZ-UBqvt1En7Ki4VGMQbafy5sP21asfgI4fwjT0qdvCkEfFLko4K35vfgm-OJ-HI5VUWfE0t-pweRgFarKy-Hn9gNLUyBPvEPykbOQuNpx5nn1X31kpFCjEKgE03HccG01NUr7oEuQgAbn169u8tP4P7Bn5qzy102Xb2OM_tSl2lf2ofbxSAIOxAqRt-gSul-bfns3ox8",
+];
+---
+
+<header class="relative flex min-h-screen items-center overflow-hidden bg-white pt-20">
+  <div class="grid-bg absolute inset-0 opacity-40"></div>
+  <div class="absolute right-0 top-0 h-full w-1/2 bg-linear-to-l from-primary/5 to-transparent"></div>
+  <div class="relative z-10 mx-auto w-full max-w-360 px-8 py-20 lg:px-12 lg:py-32">
+    <div class="max-w-5xl">
+      <div class="mb-8 inline-flex items-center gap-3 rounded-full border border-neutral-200 bg-white/50 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">
+        <span class="size-1.5 animate-pulse rounded-full bg-primary"></span>
+        Digital Craftsmanship Studio
+      </div>
+      <h1 class="text-balance mb-10 text-6xl font-extrabold leading-[0.95] text-neutral-950 lg:text-[110px]">
+        We engineer digital products that <span class="italic text-primary">perform.</span>
+      </h1>
+      <div class="mt-16 flex flex-col gap-10 md:flex-row md:items-center">
+        <p class="max-w-md text-xl font-normal leading-relaxed text-neutral-500">
+          We design and build high-performance web products for brands that care about quality, scalability, and
+          long-term impact.
+        </p>
+        <div class="flex flex-wrap gap-5">
+          <a
+            class="rounded-full bg-neutral-950 px-10 py-5 text-sm font-bold uppercase tracking-widest text-white transition-transform hover:scale-105"
+            href="#contact"
+          >
+            Start a Project
+          </a>
+          <div class="flex items-center -space-x-3">
+            {
+              avatarImages.map((src, index) => (
+                <div class="size-10 overflow-hidden rounded-full border-2 border-white bg-neutral-200">
+                  <img alt={`User ${index + 1}`} loading="lazy" src={src} />
+                </div>
+              ))
+            }
+            <span class="ml-6 text-sm font-bold text-neutral-400">Trusted by 50+ Leaders</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
