@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tekadius.com/sitemap-index.xml
