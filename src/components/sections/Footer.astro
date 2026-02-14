@@ -1,9 +1,10 @@
 ---
-import { socialLinks } from "../../data/social-links";
+import { companyDetails } from "../../data/company-details";
 const currentYear = new Date().getFullYear();
 const isHomePage = Astro.url.pathname === "/";
 const sectionHref = (id: string) => (isHomePage ? `#${id}` : `/#${id}`);
 const topHref = isHomePage ? "#top" : "/";
+const { email, phone, socialLinks } = companyDetails;
 
 const platformLinks = [
   { href: sectionHref("services"), label: "Services" },
@@ -69,11 +70,11 @@ const specialtyLinks = ["Web Apps", "SaaS UX", "DevOps", "Branding"];
           <h2 class="mb-8 text-xs font-bold uppercase tracking-widest text-neutral-950">Hello</h2>
           <ul class="space-y-4">
             <li>
-              <a class="text-sm text-neutral-500 hover:text-primary" href="mailto:hello@tekadius.io">
-                contact@tekadius.com
+              <a class="text-sm text-neutral-500 hover:text-primary" href={`mailto:${email}`}>
+                {email}
               </a>
             </li>
-            <li class="text-sm text-neutral-500">+234 814 209 9365</li>
+            <li class="text-sm text-neutral-500">{phone}</li>
           </ul>
         </div>
       </div>
