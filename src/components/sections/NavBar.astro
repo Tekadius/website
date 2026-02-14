@@ -1,4 +1,6 @@
 ---
+import Logo from "../../assets/tekadius_logo.svg"
+
 const isHomePage = Astro.url.pathname === "/";
 const sectionHref = (id: string) => (isHomePage ? `#${id}` : `/#${id}`);
 const logoHref = isHomePage ? "#top" : "/";
@@ -8,7 +10,7 @@ const logoHref = isHomePage ? "#top" : "/";
   <div class="mx-auto flex h-20 max-w-360 items-center justify-between px-8 lg:px-12">
     <div class="flex items-center gap-8">
       <a class="flex items-center gap-2" href={logoHref}>
-        <span class="font-barabara text-lg lg:text-xl font-extrabold uppercase tracking-widest text-primary">TEKADIUS</span>
+        <img src={Logo.src} alt="Tekadius Logo" class="h-8 w-auto" loading="eager" decoding="sync"/>
       </a>
       <div class="ml-12 hidden items-center gap-8 md:flex">
         <a
