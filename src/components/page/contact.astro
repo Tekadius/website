@@ -11,18 +11,18 @@ const expectations = [
   "If we're not a fit, we'll say so",
 ];
 ---
-    <section class="relative overflow-hidden bg-white pt-16">
+    <section class="relative overflow-hidden bg-white py-24 lg:py-32">
       <div class="grid-bg absolute inset-0 opacity-30"></div>
       <div class="absolute right-0 top-0 h-full w-1/2 bg-linear-to-l from-primary/5 to-transparent"></div>
-      <div class="relative z-10 mx-auto w-full max-w-360 px-8 py-20 lg:px-12 lg:pt-32">
+      <div class="relative z-10 mx-auto w-full max-w-360 px-8 lg:px-12">
         <div class="max-w-4xl">
-          <!-- <p class="mb-6 text-[13px] font-bold uppercase tracking-[0.3em] text-primary">Contact</p> -->
-          <h1 class="text-balance mb-8 text-6xl font-extrabold leading-[0.95] text-neutral-950 lg:text-[110px]">Let's talk.</h1>
+          <p class="mb-6 text-sm font-bold uppercase tracking-widest text-primary">Contact</p>
+          <h1 class="text-balance mb-8 text-6xl font-extrabold leading-none text-neutral-950 lg:text-8xl">Let's talk.</h1>
           <p class="max-w-2xl text-xl leading-relaxed text-neutral-500">
             Tell us what you're building. We'll respond with clear next steps, no fluff.
           </p>
           <p
-            class="mt-10 inline-flex items-center gap-3 rounded-full border border-neutral-200 bg-white/70 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500"
+            class="mt-10 inline-flex items-center gap-3 rounded-full border border-neutral-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-widest text-neutral-500"
           >
             <span class="size-1.5 animate-pulse rounded-full bg-primary"></span>
             Response within 24-48 hours
@@ -31,9 +31,9 @@ const expectations = [
       </div>
     </section>
 
-     <section class="border-y border-neutral-100 bg-neutral-50 py-24" id="contact-form">
+     <section class="border-y border-neutral-100 bg-neutral-50 py-24 lg:py-32" id="contact-form">
       <div class="mx-auto max-w-360 px-8 lg:px-12">
-        <div class="grid items-start gap-14 lg:grid-cols-12">
+        <div class="grid items-start gap-12 lg:grid-cols-12 lg:items-stretch">
           <div class="lg:col-span-7">
             <h2 class="text-4xl font-extrabold leading-tight text-neutral-950 lg:text-5xl">Share the project context.</h2>
             <p class="mt-6 max-w-xl text-lg text-neutral-500">
@@ -42,27 +42,27 @@ const expectations = [
             <ContactForm client:load/>            
           </div>
 
-          <aside class="self-start lg:col-span-5 lg:place-self-start">
-            <div class="h-fit border border-neutral-200 bg-white p-10 lg:p-12">
+          <aside class="lg:col-span-5 lg:h-full">
+            <div class="h-full border border-neutral-200 bg-white p-10 lg:p-12">
               <h3 class="mb-8 text-3xl font-extrabold text-neutral-950">Contact details</h3>
               <ul class="space-y-8">
                 <li>
-                  <h4 class="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950">Email</h4>
-                  <a class="text-[15px] text-neutral-500 transition-colors hover:text-primary" href={`mailto:${contactEmail}`}>
+                  <h4 class="mb-3 text-xs font-bold uppercase tracking-widest text-neutral-950">Email</h4>
+                  <a class="text-base text-neutral-500 transition-colors hover:text-primary" href={`mailto:${contactEmail}`}>
                     {contactEmail}
                   </a>
                 </li>
                 <li>
-                  <h4 class="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950">Phone</h4>
-                  <p class="text-[15px] text-neutral-500">{contactPhone}</p>
+                  <h4 class="mb-3 text-xs font-bold uppercase tracking-widest text-neutral-950">Phone</h4>
+                  <p class="text-base text-neutral-500">{contactPhone}</p>
                 </li>
                 <li>
-                  <h4 class="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950">Social</h4>
+                  <h4 class="mb-3 text-xs font-bold uppercase tracking-widest text-neutral-950">Social</h4>
                   <div class="flex flex-wrap gap-6">
                     {
                       socialLinks.map((link) => (
                         <a
-                          class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-neutral-400 transition-colors hover:text-primary"
+                          class="text-xs font-extrabold uppercase tracking-widest text-neutral-400 transition-colors hover:text-primary"
                           href={link.href}
                           rel="noopener noreferrer"
                           target="_blank"
@@ -80,10 +80,10 @@ const expectations = [
       </div>
     </section>
 
-    <section class="bg-white py-24">
+    <section class="bg-white py-24 lg:py-32">
       <div class="mx-auto max-w-360 px-8 lg:px-12">
         <div class="max-w-3xl">
-          <p class="mb-6 text-[13px] font-bold uppercase tracking-[0.3em] text-primary">Before we start</p>
+          <p class="mb-6 text-sm font-bold uppercase tracking-widest text-primary">Before we start</p>
           <h2 class="mb-12 text-5xl font-extrabold leading-tight text-neutral-950">What to expect.</h2>
         </div>
         <ul class="grid gap-6 md:grid-cols-2">

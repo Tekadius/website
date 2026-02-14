@@ -1,4 +1,4 @@
-import { useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type SubmitEvent } from "react";
 import emailjs from "@emailjs/browser";
 
 const inputClasses =
@@ -66,7 +66,7 @@ export default function ContactForm() {
   const canSend = Boolean(serviceId && templateId && publicKey);
   const isSending = status.variant === "sending";
 
-  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) return;
 
@@ -132,7 +132,7 @@ export default function ContactForm() {
         <div className="grid gap-6 md:grid-cols-2">
           <div>
             <label
-              className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950"
+              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-neutral-950"
               htmlFor="name">
               <span>Name</span>
               <span aria-hidden="true" className="leading-none text-red-500">
@@ -152,7 +152,7 @@ export default function ContactForm() {
 
           <div>
             <label
-              className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950"
+              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-neutral-950"
               htmlFor="email">
               <span>Email</span>
               <span aria-hidden="true" className="leading-none text-red-500">
@@ -174,7 +174,7 @@ export default function ContactForm() {
         <div className="grid gap-6 md:grid-cols-2">
           <div>
             <label
-              className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950"
+              className="text-xs font-bold uppercase tracking-widest text-neutral-950"
               htmlFor="company">
               Company (optional)
             </label>
@@ -190,7 +190,7 @@ export default function ContactForm() {
 
           <div>
             <label
-              className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950"
+              className="text-xs font-bold uppercase tracking-widest text-neutral-950"
               htmlFor="budget">
               Budget range (optional)
             </label>
@@ -212,7 +212,7 @@ export default function ContactForm() {
 
         <div>
           <label
-            className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950"
+            className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-neutral-950"
             htmlFor="message">
             <span>Message</span>
             <span aria-hidden="true" className="leading-none text-red-500">
@@ -230,7 +230,7 @@ export default function ContactForm() {
         </div>
 
         <button
-          className="rounded-full bg-primary px-10 py-4 text-[13px] font-bold uppercase tracking-widest text-white cursor-pointer transition-all hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-full bg-primary px-10 py-4 text-sm font-bold uppercase tracking-widest text-white cursor-pointer transition-all hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 disabled:cursor-not-allowed disabled:opacity-60"
           type="submit">
           {isSending ? "Sending…" : "Send Message"}
         </button>
