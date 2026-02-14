@@ -1,0 +1,60 @@
+---
+import MainLayout from "../layouts/Layout.astro";
+---
+
+<MainLayout title="404 | Lost in the Digital Void - Tekadius" hideNav={true} hideFooter={true}>
+  <section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#f8f9fb]">
+    <div class="grid-bg absolute inset-0 opacity-30"></div>
+    <div class="pointer-events-none absolute top-1/2 left-1/2 h-140 w-140 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[120px]"></div>
+
+    <div class="relative z-10 mx-auto max-w-4xl px-8 py-16 text-center">
+      <div class="mb-8 flex items-center justify-center">
+        <div class="flex items-center text-[150px] font-extrabold leading-none tracking-tighter text-neutral-950 md:text-[220px] lg:text-[280px]">
+          <span>4</span>
+          <div class="relative mx-2 flex size-[0.8em] items-center justify-center">
+            <div class="absolute inset-0 rounded-full border-[3px] border-primary/20 md:border-[5px]"></div>
+            <div class="animate-rotate-slow absolute inset-2 rounded-full border border-dashed border-neutral-300"></div>
+            <span class="material-symbols-outlined animate-pulse text-[0.5em] text-primary">deployed_code</span>
+          </div>
+          <span>4</span>
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-155">
+        <h1 class="mb-6 text-4xl font-extrabold text-neutral-950 md:text-5xl">Lost in the digital void?</h1>
+        <p class="mb-12 text-lg font-normal leading-relaxed text-neutral-500 md:text-xl">
+          Oops! This page went off-script. The page you are looking for might have been moved or doesn&apos;t exist anymore.
+        </p>
+        <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a
+            class="w-full rounded-full bg-primary px-10 py-5 text-center text-sm font-bold uppercase tracking-widest text-white transition-transform hover:scale-105 sm:w-auto sm:min-w-42.5"
+            href="/"
+          >
+            Back to Home
+          </a>
+          <a
+            class="w-full rounded-full border border-neutral-200 bg-white/40 px-10 py-5 text-center text-sm font-bold uppercase tracking-widest text-neutral-950 transition-colors hover:bg-neutral-50 sm:w-auto sm:min-w-47.5"
+            href="/#services"
+          >
+            View Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  @keyframes rotate-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+</style>

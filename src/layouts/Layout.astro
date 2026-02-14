@@ -5,11 +5,15 @@ import Footer from "../components/sections/Footer.astro";
 
 interface Props {
   description?: string;
+  hideFooter?: boolean;
+  hideNav?: boolean;
   title?: string;
 }
 
 const {
   description = "Tekadius builds high-performance, scalable digital products for ambitious teams.",
+  hideFooter = false,
+  hideNav = false,
   title = "Tekadius | Premium Web Solutions",
 } = Astro.props;
 ---
@@ -28,9 +32,9 @@ const {
 	</head>
 	<body class="antialiased">
 		<main id="top">
-			<NavBar />
-				<slot />
-			<Footer />
+			{!hideNav && <NavBar />}
+			<slot />
+			{!hideFooter && <Footer />}
 		</main>
 	</body>
 </html>
